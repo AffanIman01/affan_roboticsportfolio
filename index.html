@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affan Iman Azman — Robotics Engineer</title>
+<meta name="description" content="Robotics & autonomous systems engineer specializing in UAVs, USVs, ROS 2, embedded systems, and computer vision.">
+<meta property="og:title" content="Affan Iman Azman — Robotics Engineer">
+<meta property="og:description" content="Portfolio of Affan Iman Azman, mechatronics engineer focused on autonomous drones, marine robotics, and embedded systems.">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+/* ── Art Direction ──────────────────────────────────────────────
+   Concept: Mechatronics / Robotics Engineer — precision machinery,
+   autonomous systems, technical mastery
+   Palette: Deep navy-black surfaces, teal-cyan primary accent,
+            warm off-white text → feels like a terminal + lab hybrid
+   Typography: Cabinet Grotesk display (bold, technical) + Satoshi body
+               + Space Mono for code/metadata
+   Density: Spacious with tight data moments
+──────────────────────────────────────────────────────────────── */
+
+/* ── Tokens ─────────────────────────────────────────────────── */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    8rem);
+
+  --space-1:  0.25rem; --space-2:  0.5rem;  --space-3:  0.75rem;
+  --space-4:  1rem;    --space-5:  1.25rem; --space-6:  1.5rem;
+  --space-8:  2rem;    --space-10: 2.5rem;  --space-12: 3rem;
+  --space-16: 4rem;    --space-20: 5rem;    --space-24: 6rem;
+  --space-32: 8rem;
+
+  --radius-sm: 0.25rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem; --radius-xl: 1.25rem; --radius-full: 9999px;
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --content-narrow: 640px; --content-default: 960px;
+  --content-wide: 1200px;
+
+  --font-display: 'Cabinet Grotesk', 'Helvetica Neue', sans-serif;
+  --font-body:    'Satoshi', 'Inter', sans-serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+}
+
+/* ── Custom Dark Palette (Tech/Lab) ─────────────────────────── */
+:root, [data-theme="dark"] {
+  --color-bg:              #0a0d12;
+  --color-surface:         #0f1318;
+  --color-surface-2:       #141920;
+  --color-surface-offset:  #1a2030;
+  --color-surface-dynamic: #1f2738;
+  --color-divider:         #1e2840;
+  --color-border:          rgba(100,180,220,0.10);
+
+  --color-text:            #e8edf5;
+  --color-text-muted:      #7a8fa8;
+  --color-text-faint:      #3a4a60;
+  --color-text-inverse:    #0a0d12;
+
+  --color-primary:         #00c8d4;
+  --color-primary-hover:   #00e0ed;
+  --color-primary-active:  #00f5ff;
+  --color-primary-highlight: rgba(0,200,212,0.12);
+
+  --color-accent2:         #4f9cf9;
+  --color-success:         #4ade80;
+  --color-warning:         #fb923c;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 30px rgba(0,200,212,0.15);
+}
+
+[data-theme="light"] {
+  --color-bg:              #f4f6fa;
+  --color-surface:         #ffffff;
+  --color-surface-2:       #f8fafd;
+  --color-surface-offset:  #eef2f8;
+  --color-surface-dynamic: #e5ecf5;
+  --color-divider:         #dde5f0;
+  --color-border:          rgba(0,120,160,0.12);
+  --color-text:            #111827;
+  --color-text-muted:      #4b6480;
+  --color-text-faint:      #9ab0c8;
+  --color-text-inverse:    #ffffff;
+  --color-primary:         #0088a8;
+  --color-primary-hover:   #006888;
+  --color-primary-active:  #004c68;
+  --color-primary-highlight: rgba(0,136,168,0.10);
+  --color-accent2:         #2563eb;
+  --color-success:         #16a34a;
+  --color-warning:         #ea580c;
+  --shadow-sm: 0 1px 3px rgba(0,30,60,0.08);
+  --shadow-md: 0 4px 16px rgba(0,30,60,0.10);
+  --shadow-lg: 0 12px 40px rgba(0,30,60,0.14);
+  --shadow-glow: 0 0 30px rgba(0,136,168,0.12);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+a, button, [role="button"] {
+  transition: color var(--transition-interactive),
+              background var(--transition-interactive),
+              border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive),
+              opacity var(--transition-interactive);
+}
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+::selection { background: var(--color-primary-highlight); color: var(--color-text); }
+h1,h2,h3,h4 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+p,li { text-wrap: pretty; }
+
+/* ── Grid Noise Background ──────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,200,212,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,212,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(0,136,168,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,136,168,0.04) 1px, transparent 1px);
+}
+
+/* ── Scroll Animations ──────────────────────────────────────── */
+.fade-in { opacity: 1; }
+@supports (animation-timeline: scroll()) {
+  .fade-in {
+    opacity: 0;
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+  }
+}
+@keyframes reveal-fade { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.container {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 4vw, var(--space-12));
+}
+.container--narrow { max-width: var(--content-default); margin-inline: auto; padding-inline: clamp(var(--space-4), 4vw, var(--space-12)); }
+
+section { position: relative; z-index: 1; }
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: var(--space-4) 0;
+  background: color-mix(in oklch, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-interactive);
+}
+.nav__inner {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 4vw, var(--space-12));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+.nav__logo {
+  display: flex; align-items: center; gap: var(--space-2);
+  text-decoration: none; color: var(--color-text);
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--text-sm); letter-spacing: -0.01em;
+}
+.nav__logo svg { color: var(--color-primary); }
+.nav__links {
+  display: flex; align-items: center; gap: var(--space-6);
+}
+.nav__links a {
+  text-decoration: none; color: var(--color-text-muted);
+  font-size: var(--text-sm); font-weight: 500;
+  transition: color var(--transition-interactive);
+}
+.nav__links a:hover { color: var(--color-primary); }
+.nav__actions { display: flex; align-items: center; gap: var(--space-3); }
+.btn-theme {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+.btn-theme:hover { color: var(--color-primary); background: var(--color-primary-highlight); }
+.btn-cta {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary); color: var(--color-bg);
+  border-radius: var(--radius-full); font-size: var(--text-sm);
+  font-weight: 700; text-decoration: none;
+  transition: background var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+.btn-cta:hover { background: var(--color-primary-hover); box-shadow: 0 0 20px rgba(0,200,212,0.3); }
+.nav__hamburger { display: none; padding: var(--space-2); color: var(--color-text-muted); }
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100dvh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-block: clamp(var(--space-24), 12vw, var(--space-32));
+  padding-top: calc(clamp(var(--space-24), 12vw, var(--space-32)) + 80px);
+  position: relative; overflow: hidden;
+}
+.hero__glow {
+  position: absolute; width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,212,0.12) 0%, transparent 70%);
+  top: 10%; right: -100px; pointer-events: none;
+}
+.hero__badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  background: var(--color-primary-highlight);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  color: var(--color-primary); letter-spacing: 0.04em;
+  margin-bottom: var(--space-6);
+}
+.hero__badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: var(--space-6);
+}
+.hero h1 .line-accent { color: var(--color-primary); }
+.hero__sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 55ch;
+  margin-bottom: var(--space-10);
+  line-height: 1.6;
+}
+.hero__actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-primary); color: var(--color-bg);
+  border-radius: var(--radius-full); font-size: var(--text-sm);
+  font-weight: 700; text-decoration: none;
+  transition: background var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
+}
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 0 30px rgba(0,200,212,0.3);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted); background: transparent;
+  border-radius: var(--radius-full); font-size: var(--text-sm);
+  font-weight: 500; text-decoration: none;
+  transition: color var(--transition-interactive), border-color var(--transition-interactive), background var(--transition-interactive);
+}
+.btn-secondary:hover {
+  color: var(--color-text); border-color: var(--color-primary);
+  background: var(--color-primary-highlight);
+}
+.hero__stats {
+  margin-top: var(--space-16);
+  display: flex; gap: var(--space-8); flex-wrap: wrap;
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+.hero__stat-num {
+  display: block;
+  font-size: var(--text-2xl); font-family: var(--font-display);
+  font-weight: 800; color: var(--color-primary); line-height: 1;
+}
+.hero__stat-label {
+  font-size: var(--text-xs); color: var(--color-text-muted);
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* ── SECTION HEADINGS ────────────────────────────────────────── */
+.section-header { margin-bottom: var(--space-12); }
+.section-label {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  color: var(--color-primary); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: var(--space-3);
+}
+.section-label::before {
+  content: ''; display: block; width: 24px; height: 1px;
+  background: var(--color-primary);
+}
+.section-title {
+  font-size: var(--text-2xl); font-weight: 800; letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.section-desc {
+  margin-top: var(--space-4); font-size: var(--text-base);
+  color: var(--color-text-muted); max-width: 60ch;
+}
+
+/* ── ABOUT ───────────────────────────────────────────────────── */
+.about { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+.about__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-16); align-items: start;
+}
+.about__text p {
+  color: var(--color-text-muted); margin-bottom: var(--space-5); line-height: 1.7;
+}
+.about__text p strong { color: var(--color-text); }
+.about__highlights {
+  display: flex; flex-direction: column; gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.about__highlight {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.about__highlight-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-primary-highlight);
+  border-radius: var(--radius-md); color: var(--color-primary);
+}
+.about__highlight-label { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+.about__highlight-value { font-size: var(--text-sm); font-weight: 600; margin-top: 2px; }
+
+/* ── SKILLS ──────────────────────────────────────────────────── */
+.skills { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-5);
+}
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
+}
+.skill-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+.skill-card__icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-primary-highlight);
+  border-radius: var(--radius-lg); color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.skill-card h3 { font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-3); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.skill-tag {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  padding: 2px var(--space-2);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); color: var(--color-text-muted);
+}
+
+/* ── PROJECTS ────────────────────────────────────────────────── */
+.projects { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-5);
+}
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
+  cursor: default;
+}
+.project-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+.project-card--featured { grid-column: span 7; }
+.project-card--regular  { grid-column: span 5; }
+.project-card--wide     { grid-column: span 12; }
+.project-card--half     { grid-column: span 6; }
+
+.project-card__visual {
+  width: 100%; aspect-ratio: 16/9; overflow: hidden;
+  background: var(--color-surface-offset);
+  position: relative;
+}
+.project-card--featured .project-card__visual { aspect-ratio: 16/8; }
+.project-card__visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover .project-card__visual img { transform: scale(1.03); }
+
+/* SVG fallback visuals */
+.project-visual-svg {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--color-surface-2) 0%, var(--color-surface-offset) 100%);
+  position: relative; overflow: hidden;
+}
+.project-visual-svg::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(0,200,212,0.04) 20px,
+    rgba(0,200,212,0.04) 21px
+  );
+}
+[data-theme="light"] .project-visual-svg::before {
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 20px,
+    rgba(0,136,168,0.05) 20px, rgba(0,136,168,0.05) 21px
+  );
+}
+.project-visual-icon {
+  position: relative; z-index: 1;
+  color: var(--color-primary); opacity: 0.7;
+}
+
+.project-card__body { padding: var(--space-6); flex: 1; display: flex; flex-direction: column; }
+.project-card__meta {
+  display: flex; align-items: center; gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.project-card__type {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.08em;
+}
+.project-card__year {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  color: var(--color-text-faint); margin-left: auto;
+}
+.project-card h3 {
+  font-size: var(--text-lg); font-weight: 700;
+  margin-bottom: var(--space-3); letter-spacing: -0.01em;
+}
+.project-card p {
+  font-size: var(--text-sm); color: var(--color-text-muted);
+  line-height: 1.6; flex: 1;
+}
+.project-card__tags {
+  display: flex; flex-wrap: wrap; gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.project-tag {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  padding: 3px var(--space-2);
+  background: var(--color-primary-highlight);
+  border: 1px solid rgba(0,200,212,0.2);
+  border-radius: var(--radius-sm); color: var(--color-primary);
+}
+[data-theme="light"] .project-tag {
+  border-color: rgba(0,136,168,0.2);
+}
+
+/* ── EXPERIENCE ──────────────────────────────────────────────── */
+.experience { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+.timeline { display: flex; flex-direction: column; gap: 0; max-width: 800px; }
+.timeline-item {
+  display: grid; grid-template-columns: 120px 1fr;
+  gap: var(--space-6); position: relative;
+}
+.timeline-item + .timeline-item { margin-top: var(--space-8); }
+.timeline-item::before {
+  content: ''; position: absolute;
+  left: 119px; top: 30px; bottom: -32px;
+  width: 1px; background: var(--color-border);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-date {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  color: var(--color-text-faint); text-align: right;
+  padding-top: 6px;
+}
+.timeline-dot {
+  position: absolute; left: 113px; top: 6px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 8px rgba(0,200,212,0.5);
+}
+.timeline-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.timeline-role {
+  font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-1);
+}
+.timeline-org {
+  font-size: var(--text-sm); color: var(--color-primary); font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+.timeline-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+.timeline-pills { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+.timeline-pill {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  padding: 2px var(--space-2);
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-sm); color: var(--color-text-muted);
+}
+
+/* ── CONTACT ─────────────────────────────────────────────────── */
+.contact { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+.contact__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-8), 5vw, var(--space-16));
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.contact__card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(0,200,212,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact__title { font-size: var(--text-2xl); font-weight: 800; margin-bottom: var(--space-4); }
+.contact__sub { color: var(--color-text-muted); max-width: 50ch; margin-inline: auto; margin-bottom: var(--space-8); }
+.contact__links {
+  display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap;
+}
+.contact__link {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;
+  color: var(--color-text-muted); text-decoration: none;
+  transition: all var(--transition-interactive);
+}
+.contact__link:hover {
+  color: var(--color-primary); border-color: var(--color-primary);
+  background: var(--color-primary-highlight);
+}
+.contact__email {
+  background: var(--color-primary); color: var(--color-bg);
+  border-color: var(--color-primary); font-weight: 700;
+}
+.contact__email:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-bg); border-color: var(--color-primary-hover);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+  position: relative; z-index: 1;
+}
+.footer__inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: var(--space-4);
+}
+.footer__copy { font-size: var(--text-xs); color: var(--color-text-faint); font-family: var(--font-mono); }
+.footer__links { display: flex; gap: var(--space-4); }
+.footer__links a { font-size: var(--text-xs); color: var(--color-text-faint); text-decoration: none; }
+.footer__links a:hover { color: var(--color-primary); }
+
+/* ── MOBILE ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: block; }
+  .nav__mobile {
+    display: none; position: fixed; inset: 0; top: 70px;
+    background: var(--color-bg);
+    z-index: 99; padding: var(--space-8);
+    flex-direction: column; gap: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+  .nav__mobile.active { display: flex; }
+  .nav__mobile a {
+    font-size: var(--text-xl); font-weight: 700;
+    color: var(--color-text); text-decoration: none;
+    padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border);
+  }
+  .nav__mobile a:hover { color: var(--color-primary); }
+
+  .about__grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .project-card--featured, .project-card--regular,
+  .project-card--wide, .project-card--half { grid-column: span 12; }
+  .timeline-item { grid-template-columns: 80px 1fr; gap: var(--space-4); }
+  .timeline-item::before { left: 79px; }
+  .timeline-dot { left: 73px; }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .hero__stat-num { font-size: var(--text-xl); }
+  .footer__inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .hero__stats { gap: var(--space-5); }
+  .projects__grid { grid-template-columns: 1fr; }
+  .project-card--featured, .project-card--regular,
+  .project-card--wide, .project-card--half { grid-column: span 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <!-- SVG Logo: circuit-node mark -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="Affan Iman Azman logo" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="6" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="4" fill="currentColor"/>
+        <line x1="14" y1="1" x2="14" y2="10" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="14" y1="18" x2="14" y2="27" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="1" y1="14" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="18" y1="14" x2="27" y2="14" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="14" cy="1" r="2" fill="currentColor" opacity="0.5"/>
+        <circle cx="14" cy="27" r="2" fill="currentColor" opacity="0.5"/>
+        <circle cx="1" cy="14" r="2" fill="currentColor" opacity="0.5"/>
+        <circle cx="27" cy="14" r="2" fill="currentColor" opacity="0.5"/>
+      </svg>
+      AIA
+    </a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="btn-theme" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="btn-cta">Hire Me</a>
+      <button class="nav__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile nav -->
+  <nav class="nav__mobile" id="mobileNav">
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#skills" onclick="closeMobileNav()">Skills</a>
+    <a href="#projects" onclick="closeMobileNav()">Projects</a>
+    <a href="#experience" onclick="closeMobileNav()">Experience</a>
+    <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  </nav>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Available for opportunities
+    </div>
+    <h1>
+      Affan Iman<br>
+      <span class="line-accent">Azman</span>
+    </h1>
+    <p class="hero__sub">
+      Mechatronics Engineer specialising in autonomous UAVs, marine robotics, 
+      ROS&nbsp;2, embedded systems, and computer vision.
+    </p>
+    <div class="hero__actions">
+      <a href="#projects" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
+        View Projects
+      </a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+    <div class="hero__stats">
+      <div>
+        <span class="hero__stat-num">5+</span>
+        <span class="hero__stat-label">Autonomous Systems</span>
+      </div>
+      <div>
+        <span class="hero__stat-num">3.03</span>
+        <span class="hero__stat-label">CGPA — USM</span>
+      </div>
+      <div>
+        <span class="hero__stat-num">ROS&nbsp;2</span>
+        <span class="hero__stat-label">Humble / Jazzy</span>
+      </div>
+      <div>
+        <span class="hero__stat-num">UAV+USV</span>
+        <span class="hero__stat-label">Multi-Domain</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__text fade-in">
+        <div class="section-header">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Building machines<br>that think and move</h2>
+        </div>
+        <p>I'm a <strong>Mechatronics Engineering graduate from Universiti Sains Malaysia (USM)</strong> with a passion for building intelligent autonomous systems — from drones navigating obstacle fields to unmanned vessels patrolling the ocean.</p>
+        <p>Currently working as a <strong>Research Assistant</strong> at USM's marine robotics lab, I design and integrate hardware-software stacks for real-world robotic platforms. My work spans ArduPilot/PX4 autopilots, Jetson Nano perception pipelines, ROS&nbsp;2 middleware, and custom PCB design.</p>
+        <p>I'm driven by the challenge of making autonomous systems robust, safe, and genuinely useful — whether that's a drone avoiding power lines or a surface vessel navigating a busy port.</p>
+      </div>
+      <div class="fade-in" style="animation-delay:100ms">
+        <div class="about__highlights">
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div class="about__highlight-label">Current Role</div>
+              <div class="about__highlight-value">Research Assistant — Marine Robotics, USM</div>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <div class="about__highlight-label">Education</div>
+              <div class="about__highlight-value">B.Eng Mechatronics (Hons) — USM, CGPA 3.03</div>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div>
+              <div class="about__highlight-label">Location</div>
+              <div class="about__highlight-value">Parit Buntar, Perak, Malaysia</div>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="about__highlight-label">Focus Areas</div>
+              <div class="about__highlight-value">UAV · USV · ROS 2 · Embedded Systems · CV</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Technical Skills</div>
+      <h2 class="section-title">Tools & Technologies</h2>
+      <p class="section-desc">A full-stack robotics toolkit — from flight controller firmware to real-time computer vision.</p>
+    </div>
+    <div class="skills__grid">
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Autonomous Systems</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">ArduPilot</span>
+          <span class="skill-tag">PX4</span>
+          <span class="skill-tag">Mission Planner</span>
+          <span class="skill-tag">QGroundControl</span>
+          <span class="skill-tag">SITL/HITL</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <h3>Robotics Middleware</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">ROS 2 Humble</span>
+          <span class="skill-tag">Gazebo Harmonic</span>
+          <span class="skill-tag">MAVROS</span>
+          <span class="skill-tag">AirSim</span>
+          <span class="skill-tag">Nav2</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Computer Vision</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">YOLOv5/v8</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Stereo Depth</span>
+          <span class="skill-tag">Obstacle Avoidance</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+        <h3>Embedded Systems</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Raspberry Pi 5</span>
+          <span class="skill-tag">Jetson Nano</span>
+          <span class="skill-tag">ESP32</span>
+          <span class="skill-tag">Pixhawk</span>
+          <span class="skill-tag">APM 2.8</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C/C++</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Simulink</span>
+          <span class="skill-tag">Bash/Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Design & CAD</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SolidWorks</span>
+          <span class="skill-tag">KiCad</span>
+          <span class="skill-tag">PCB Design</span>
+          <span class="skill-tag">3D Modelling</span>
+          <span class="skill-tag">FDM Printing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">Real-world autonomous systems — from simulation to deployment on physical hardware.</p>
+    </div>
+
+    <div class="projects__grid">
+
+      <!-- Featured: USV -->
+      <article class="project-card project-card--featured fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 11V8a1 1 0 011-1h16a1 1 0 011 1v3"/><path d="M12 7V3"/><path d="M2 11l2 8h16l2-8"/><path d="M6 15h12"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">Marine Robotics</span>
+            <span class="project-card__year">2024–2025</span>
+          </div>
+          <h3>Autonomous USV — Clearpath Heron M300</h3>
+          <p>Developed full autonomy stack for an unmanned surface vessel including GPS-denied navigation, obstacle detection via LIDAR and vision, and ROS 2-based mission planning. Integrated with ArduPilot SITL for pre-deployment simulation testing.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">ROS 2</span>
+            <span class="project-tag">ArduPilot</span>
+            <span class="project-tag">LIDAR</span>
+            <span class="project-tag">Heron M300</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Nav2</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Regular: Gyrostabilizer -->
+      <article class="project-card project-card--regular fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">Control Systems</span>
+            <span class="project-card__year">2024</span>
+          </div>
+          <h3>Active Gyrostabilizer for Marine Vessels</h3>
+          <p>Designed and built an active gyroscopic stabilization system to reduce roll motion in small marine platforms. Implemented PID control with IMU feedback on a custom PCB.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">PID Control</span>
+            <span class="project-tag">IMU</span>
+            <span class="project-tag">KiCad</span>
+            <span class="project-tag">ESP32</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Half: Autonomous Drone -->
+      <article class="project-card project-card--half fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 12m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M4.5 4.5l3.5 3.5M15.5 15.5l3.5 3.5M4.5 19.5l3.5-3.5M15.5 8.5l3.5-3.5"/>
+              <circle cx="4" cy="4" r="2"/><circle cx="20" cy="4" r="2"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="20" r="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">UAV</span>
+            <span class="project-card__year">2023–2024</span>
+          </div>
+          <h3>Autonomous Drone — F450/F550 Frames</h3>
+          <p>Built and tuned quad-copters on F450 and F550 frames with Pixhawk flight controllers. Developed autonomous waypoint missions and implemented optical flow for indoor hovering.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">Pixhawk</span>
+            <span class="project-tag">ArduCopter</span>
+            <span class="project-tag">Optical Flow</span>
+            <span class="project-tag">MATLAB</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Half: Vision Obstacle Avoidance -->
+      <article class="project-card project-card--half fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">Computer Vision</span>
+            <span class="project-card__year">2024</span>
+          </div>
+          <h3>Vision-Based Obstacle Avoidance</h3>
+          <p>Implemented real-time obstacle detection and avoidance for UAVs using stereo depth cameras and YOLOv8 on a Jetson Nano. Integrated with ROS 2 for reactive navigation.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">YOLOv8</span>
+            <span class="project-tag">Jetson Nano</span>
+            <span class="project-tag">Stereo Depth</span>
+            <span class="project-tag">ROS 2</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Half: Gazebo Simulation -->
+      <article class="project-card project-card--half fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">Simulation</span>
+            <span class="project-card__year">2023–2025</span>
+          </div>
+          <h3>Gazebo Harmonic SITL Environment</h3>
+          <p>Built custom simulation environments in Gazebo Harmonic for marine and aerial platforms. Developed world plugins, sensor models, and HIL interfaces for pre-hardware validation.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">Gazebo Harmonic</span>
+            <span class="project-tag">ROS 2</span>
+            <span class="project-tag">C++</span>
+            <span class="project-tag">ArduPilot SITL</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Half: IC Design -->
+      <article class="project-card project-card--half fade-in">
+        <div class="project-card__visual">
+          <div class="project-visual-svg">
+            <svg class="project-visual-icon" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="7" y="7" width="10" height="10" rx="1"/>
+              <path d="M7 9H3M7 12H3M7 15H3M17 9h4M17 12h4M17 15h4M9 7V3M12 7V3M15 7V3M9 21v-4M12 21v-4M15 21v-4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span class="project-card__type">IC Design</span>
+            <span class="project-card__year">2025</span>
+          </div>
+          <h3>SoC Design Verification (RTL/DV)</h3>
+          <p>Completed IC design bootcamp covering RTL design, functional verification with UVM, physical design, and layout. Developed testbenches for SoC subsystems following industry workflows.</p>
+          <div class="project-card__tags">
+            <span class="project-tag">RTL</span>
+            <span class="project-tag">SystemVerilog</span>
+            <span class="project-tag">UVM</span>
+            <span class="project-tag">SoC</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="container--narrow">
+    <div class="section-header fade-in">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Experience & Education</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2024–Present</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Research Assistant</div>
+          <div class="timeline-org">Universiti Sains Malaysia (USM) — Marine Robotics Lab</div>
+          <div class="timeline-desc">Developing autonomous navigation and perception systems for unmanned surface vehicles. Conducting research on multi-domain robotics integration and real-time obstacle avoidance algorithms.</div>
+          <div class="timeline-pills">
+            <span class="timeline-pill">ROS 2</span>
+            <span class="timeline-pill">USV</span>
+            <span class="timeline-pill">Gazebo</span>
+            <span class="timeline-pill">Research</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2023</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Engineering Intern</div>
+          <div class="timeline-org">Cytron Technologies Sdn Bhd</div>
+          <div class="timeline-desc">Worked on embedded systems projects and robotics product development. Gained hands-on experience with microcontrollers, motor drivers, and educational robotics platforms.</div>
+          <div class="timeline-pills">
+            <span class="timeline-pill">Embedded</span>
+            <span class="timeline-pill">Robotics</span>
+            <span class="timeline-pill">Arduino</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">2020–2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">B.Eng Mechatronics Engineering (Hons)</div>
+          <div class="timeline-org">Universiti Sains Malaysia (USM) — CGPA 3.03</div>
+          <div class="timeline-desc">Specialised in autonomous systems, control theory, and embedded electronics. Final year project focused on UAV autonomous navigation with vision-based obstacle avoidance.</div>
+          <div class="timeline-pills">
+            <span class="timeline-pill">Control Systems</span>
+            <span class="timeline-pill">Robotics</span>
+            <span class="timeline-pill">Electronics</span>
+            <span class="timeline-pill">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container--narrow">
+    <div class="contact__card fade-in">
+      <div class="section-label" style="justify-content:center; margin-bottom:var(--space-4)">Contact</div>
+      <h2 class="contact__title">Let's build something<br><span style="color:var(--color-primary)">autonomous.</span></h2>
+      <p class="contact__sub">Open to robotics engineering roles, research collaborations, and autonomous systems projects. Based in Malaysia, available remotely.</p>
+      <div class="contact__links">
+        <a href="mailto:affaniman@graduate.utm.my" class="contact__link contact__email" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Me
+        </a>
+        <a href="https://linkedin.com/in/affan-iman-azman" class="contact__link" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/affaniman" class="contact__link" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer__inner">
+    <span class="footer__copy">© 2025 Affan Iman Azman — Mechatronics Engineer</span>
+    <div class="footer__links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Default to dark for tech portfolio
+  d = 'dark';
+  r.setAttribute('data-theme', d);
+  function updateIcon() {
+    if (!t) return;
+    t.innerHTML = d === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+  }
+  updateIcon();
+  if (t) {
+    t.addEventListener('click', () => {
+      d = d === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', d);
+      updateIcon();
+    });
+  }
+})();
+
+// Mobile nav
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
+function closeMobileNav() { mobileNav.classList.remove('active'); }
+document.querySelectorAll('.nav__mobile a').forEach(a => {
+  a.addEventListener('click', closeMobileNav);
+});
+</script>
+
+</body>
+</html>
