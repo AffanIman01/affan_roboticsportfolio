@@ -1206,6 +1206,26 @@ function closeMobileNav() { mobileNav.classList.remove('active'); }
 document.querySelectorAll('.nav__mobile a').forEach(a => {
   a.addEventListener('click', closeMobileNav);
 });
+
+   // Make project cards clickable
+const projectLinks = [
+    { selector: '.project-card--featured:nth-of-type(1)', url: 'projects/usv-heron.html' },
+    { selector: '.project-card--regular:nth-of-type(1)', url: 'projects/gyrostabilizer.html' },
+    { selector: '.project-card--half:nth-of-type(1)', url: 'projects/autonomous-drone.html' },
+    { selector: '.project-card--half:nth-of-type(2)', url: 'projects/vision-obstacle-avoidance.html' },
+    { selector: '.project-card--half:nth-of-type(3)', url: 'projects/gazebo-simulation.html' },
+    { selector: '.project-card--half:nth-of-type(4)', url: 'projects/ic-design.html' }
+];
+
+projectLinks.forEach(link => {
+    const card = document.querySelector(link.selector);
+    if (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            window.location.href = link.url;
+        });
+    }
+});
 </script>
 
 </body>
