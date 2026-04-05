@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gazebo Simulation Environment - Affan's Robotics Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .back-link { display: inline-block; color: #667eea; text-decoration: none; margin-bottom: 20px; }
+        .back-link:hover { text-decoration: underline; }
+        .content { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { color: #667eea; margin: 30px 0 15px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .project-meta { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .project-meta p { margin: 10px 0; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .tech-tag { background: #667eea; color: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <header>
+            <h1>Gazebo Harmonic SITL Environment</h1>
+            <p>Custom simulation environments for marine and aerial robotic platforms</p>
+        </header>
+
+        <div class="content">
+            <div class="project-meta">
+                <p><strong>Duration:</strong> 2023 - 2025</p>
+                <p><strong>Role:</strong> Simulation Developer</p>
+                <p><strong>Platform:</strong> Gazebo Harmonic / Fortress</p>
+            </div>
+
+            <h2>Project Overview</h2>
+            <p>Developed comprehensive simulation environments in Gazebo Harmonic and Fortress for testing and validating autonomous marine and aerial platforms. Created custom world files, sensor models, and HIL (Hardware-in-the-Loop) interfaces for pre-hardware validation of control algorithms and navigation systems.</p>
+
+            <h2>Technical Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Gazebo Harmonic</span>
+                <span class="tech-tag">Gazebo Fortress</span>
+                <span class="tech-tag">ROS 2 Humble</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">ArduPilot SITL</span>
+                <span class="tech-tag">PX4 SITL</span>
+                <span class="tech-tag">SDF/URDF</span>
+            </div>
+
+            <h2>Simulation Capabilities</h2>
+            <ul>
+                <li><strong>Marine Environments:</strong> Ocean, harbor, and coastal scenarios with wave dynamics and current simulation</li>
+                <li><strong>Aerial Environments:</strong> Urban, forest, and open field scenarios with wind turbulence</li>
+                <li><strong>Sensor Simulation:</strong> GPS, IMU, LIDAR, cameras, depth sensors, and sonar</li>
+                <li><strong>Physics Engine:</strong> High-fidelity physics with configurable parameters for realistic behavior</li>
+                <li><strong>Multi-Robot Support:</strong> Simultaneous simulation of multiple vehicles</li>
+            </ul>
+
+            <h2>Custom World Development</h2>
+            <p><strong>Marine Worlds:</strong> Created detailed marine simulation environments including ocean surfaces with configurable wave heights, underwater terrain, floating obstacles, and realistic lighting conditions for different times of day.</p>
+            
+            <p><strong>Aerial Worlds:</strong> Designed complex 3D environments with buildings, vegetation, power lines, and dynamic obstacles to test collision avoidance and navigation algorithms.</p>
+            
+            <p><strong>Sensor Models:</strong> Implemented custom sensor plugins for specialized equipment including forward-looking sonar, multi-beam LIDAR, and stereo camera rigs with realistic noise characteristics.</p>
+
+            <h2>SITL Integration</h2>
+            <ul>
+                <li>ArduPilot SITL integration for UAV and USV autopilot testing</li>
+                <li>PX4 SITL support for alternative flight control stack</li>
+                <li>MAVLink communication protocol implementation</li>
+                <li>Mission Planner and QGroundControl connectivity</li>
+                <li>Real-time telemetry and logging capabilities</li>
+            </ul>
+
+            <h2>Plugin Development</h2>
+            <p>Developed custom Gazebo plugins in C++ to extend simulation capabilities:</p>
+            <ul>
+                <li>Wave generator plugin for realistic ocean surface dynamics</li>
+                <li>Current simulation for marine vehicle drift modeling</li>
+                <li>Wind turbulence plugin for aerial vehicles</li>
+                <li>Custom sensor noise models for realistic data</li>
+                <li>Data logging and playback for analysis</li>
+            </ul>
+
+            <h2>ROS 2 Integration</h2>
+            <ul>
+                <li>Gazebo-ROS 2 bridge for seamless communication</li>
+                <li>Topic remapping for standardized interfaces</li>
+                <li>Custom ROS 2 nodes for simulation control</li>
+                <li>Integration with Nav2 navigation stack</li>
+                <li>Visualization in RViz2</li>
+            </ul>
+
+            <h2>Hardware-in-the-Loop (HIL)</h2>
+            <p>Implemented HIL testing infrastructure allowing physical flight controllers to interface with simulated environments:</p>
+            <ul>
+                <li>Serial/USB connection to real Pixhawk hardware</li>
+                <li>Sensor data injection from simulation</li>
+                <li>Actuator command feedback to simulation</li>
+                <li>Reduced risk for initial algorithm testing</li>
+                <li>Validation of flight controller configurations</li>
+            </ul>
+
+            <h2>Validation Testing</h2>
+            <ul>
+                <li>Path planning algorithms tested in simulated environments</li>
+                <li>Collision avoidance logic validated before hardware deployment</li>
+                <li>Mission planning scenarios executed and refined</li>
+                <li>Sensor fusion algorithms tuned with simulated data</li>
+                <li>Emergency procedures tested safely</li>
+            </ul>
+
+            <h2>Performance Optimization</h2>
+            <ul>
+                <li>Real-time factor optimization for faster-than-real-time testing</li>
+                <li>GPU-accelerated rendering for complex scenes</li>
+                <li>Efficient mesh generation for large environments</li>
+                <li>LOD (Level of Detail) management for performance</li>
+                <li>Multi-threaded physics computation</li>
+            </ul>
+
+            <h2>Benefits Achieved</h2>
+            <ul>
+                <li>Reduced hardware testing time by 60% through simulation validation</li>
+                <li>Identified and fixed algorithm bugs before physical testing</li>
+                <li>Safe testing of failure modes and edge cases</li>
+                <li>Rapid iteration on control parameters</li>
+                <li>Training environment for operators and developers</li>
+                <li>Reproducible test scenarios for regression testing</li>
+            </ul>
+
+            <h2>Future Development</h2>
+            <ul>
+                <li>Integration with digital twins for real-world synchronization</li>
+                <li>Machine learning environment for RL-based control</li>
+                <li>Cloud-based simulation for distributed testing</li>
+                <li>Photo-realistic rendering for computer vision validation</li>
+                <li>Multi-fidelity simulation with varying complexity levels</li>
+            </ul>
+
+            <h2>Applications</h2>
+            <p>This simulation infrastructure supports the entire development lifecycle from algorithm prototyping to pre-deployment validation, significantly reducing development risks and costs while accelerating time-to-deployment for autonomous systems.</p>
+        </div>
+    </div>
+</body>
+</html>
