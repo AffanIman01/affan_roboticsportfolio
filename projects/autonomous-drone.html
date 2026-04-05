@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Drone System - Affan's Robotics Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .back-link { display: inline-block; color: #667eea; text-decoration: none; margin-bottom: 20px; }
+        .back-link:hover { text-decoration: underline; }
+        .content { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { color: #667eea; margin: 30px 0 15px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .project-meta { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .project-meta p { margin: 10px 0; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .tech-tag { background: #667eea; color: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <header>
+            <h1>Autonomous Drone System</h1>
+            <p>Advanced UAV with autonomous navigation and obstacle avoidance capabilities</p>
+        </header>
+
+        <div class="content">
+            <div class="project-meta">
+                <p><strong>Duration:</strong> 2023 - Present</p>
+                <p><strong>Role:</strong> Research Assistant</p>
+                <p><strong>Organization:</strong> Universiti Sains Malaysia (USM)</p>
+            </div>
+
+            <h2>Project Overview</h2>
+            <p>Developed and implemented an autonomous drone system capable of navigation, path planning, and real-time obstacle avoidance. The project involved extensive work with flight controllers, simulation environments, and computer vision integration.</p>
+
+            <h2>Technical Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">ROS 2 (Humble)</span>
+                <span class="tech-tag">ArduPilot</span>
+                <span class="tech-tag">PX4</span>
+                <span class="tech-tag">Gazebo</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Mission Planner</span>
+                <span class="tech-tag">QGroundControl</span>
+            </div>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Autonomous waypoint navigation with GPS integration</li>
+                <li>Real-time obstacle detection and avoidance using computer vision</li>
+                <li>Path planning algorithms (A*, Dijkstra) implementation</li>
+                <li>Hardware-in-the-loop (HIL) and software-in-the-loop (SITL) testing</li>
+                <li>Integration with Pixhawk and APM 2.8 flight controllers</li>
+                <li>Custom firmware development and configuration</li>
+            </ul>
+
+            <h2>Hardware Components</h2>
+            <ul>
+                <li>F450/F550 drone frames</li>
+                <li>Pixhawk flight controller</li>
+                <li>APM 2.8 autopilot system</li>
+                <li>GPS module for positioning</li>
+                <li>Companion computer (Raspberry Pi/Jetson Nano)</li>
+                <li>Camera modules for vision-based navigation</li>
+            </ul>
+
+            <h2>Development Process</h2>
+            <p><strong>Simulation & Testing:</strong> Extensive testing was conducted using Gazebo simulator with both Harmonic and Fortress versions. SITL simulations allowed for rapid prototyping and algorithm validation before hardware deployment.</p>
+            
+            <p><strong>Path Planning:</strong> Implemented advanced pathfinding algorithms including A* and Dijkstra for optimal route calculation in complex environments. These algorithms were optimized for real-time performance on embedded systems.</p>
+            
+            <p><strong>Obstacle Avoidance:</strong> Developed computer vision-based obstacle detection system using camera feeds processed through custom algorithms to ensure safe autonomous flight.</p>
+
+            <h2>Technical Challenges</h2>
+            <ul>
+                <li>Optimizing path planning algorithms for real-time embedded system performance</li>
+                <li>Integrating multiple sensors for robust environmental perception</li>
+                <li>Tuning PID controllers for stable flight characteristics</li>
+                <li>Ensuring reliable GPS positioning in various environmental conditions</li>
+                <li>Managing power consumption for extended flight times</li>
+            </ul>
+
+            <h2>Results & Achievements</h2>
+            <ul>
+                <li>Successfully achieved autonomous waypoint navigation with 95%+ accuracy</li>
+                <li>Implemented effective obstacle avoidance with real-time response</li>
+                <li>Reduced development time through comprehensive SITL/HIL testing</li>
+                <li>Created reusable ROS 2 packages for future UAV projects</li>
+            </ul>
+
+            <h2>Future Enhancements</h2>
+            <ul>
+                <li>Integration of advanced SLAM algorithms for GPS-denied environments</li>
+                <li>Multi-drone coordination and swarm intelligence</li>
+                <li>Deep learning-based object detection and classification</li>
+                <li>Enhanced battery management and solar power integration</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
