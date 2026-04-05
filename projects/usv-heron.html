@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous USV — Clearpath Heron M300 | Affan Iman Azman</title>
+<meta name="description" content="Full autonomy stack for unmanned surface vessel with GPS-denied navigation, obstacle detection, and ROS 2-based mission planning.">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root {
+  --color-bg: #0a0d12;
+  --color-surface: #0f1318;
+  --color-surface-2: #141920;
+  --color-text: #e8edf5;
+  --color-text-muted: #7a8fa8;
+  --color-primary: #00c8d4;
+  --color-primary-hover: #00e0ed;
+  --color-border: rgba(100,180,220,0.10);
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  padding: 2rem;
+}
+.container { max-width: 1000px; margin: 0 auto; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+.back-link:hover { opacity: 0.8; }
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.meta-item {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.meta-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+.meta-value {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.tag {
+  padding: 0.4rem 0.8rem;
+  background: rgba(0,200,212,0.12);
+  border: 1px solid rgba(0,200,212,0.2);
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+}
+.content { margin-bottom: 3rem; }
+.content h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.content h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.content p, .content li {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+.content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.content ul li { margin-bottom: 0.5rem; }
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(0,200,212,0.04) 20px,
+    rgba(0,200,212,0.04) 21px
+  );
+}
+.image-placeholder svg {
+  position: relative;
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="../index.html#projects" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Portfolio
+  </a>
+  
+  <h1>Autonomous USV — Clearpath Heron M300</h1>
+  
+  <div class="meta">
+    <div class="meta-item">
+      <span class="meta-label">Project Type</span>
+      <span class="meta-value">Marine Robotics</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Timeline</span>
+      <span class="meta-value">2024–2025</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-value">Research Assistant</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Organization</span>
+      <span class="meta-value">USM Marine Robotics Lab</span>
+    </div>
+  </div>
+  
+  <div class="tags">
+    <span class="tag">ROS 2 Humble</span>
+    <span class="tag">ArduPilot</span>
+    <span class="tag">LIDAR</span>
+    <span class="tag">Heron M300</span>
+    <span class="tag">Python</span>
+    <span class="tag">Nav2</span>
+    <span class="tag">SITL</span>
+  </div>
+  
+  <div class="image-placeholder">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 11V8a1 1 0 011-1h16a1 1 0 011 1v3"/>
+      <path d="M12 7V3"/>
+      <path d="M2 11l2 8h16l2-8"/>
+      <path d="M6 15h12"/>
+    </svg>
+  </div>
+  
+  <div class="content">
+    <h2>Project Overview</h2>
+    <p>
+      Developed a comprehensive autonomy stack for the Clearpath Heron M300 unmanned surface vessel (USV) as part of marine robotics research at Universiti Sains Malaysia. The project focused on enabling autonomous navigation and obstacle avoidance in challenging maritime environments, including GPS-denied scenarios.
+    </p>
+    
+    <h2>Key Objectives</h2>
+    <ul>
+      <li>Implement GPS-denied navigation capabilities using sensor fusion</li>
+      <li>Develop real-time obstacle detection and avoidance system</li>
+      <li>Create ROS 2-based mission planning and execution framework</li>
+      <li>Integrate ArduPilot SITL for pre-deployment simulation testing</li>
+      <li>Ensure robust performance in varying sea conditions</li>
+    </ul>
+    
+    <h2>Technical Implementation</h2>
+    
+    <h3>Navigation System</h3>
+    <p>
+      The USV's navigation system combines multiple sensors including LIDAR, IMU, and cameras to create a robust positioning solution. I implemented Extended Kalman Filter (EKF) sensor fusion to maintain accurate state estimation even when GPS signals are unavailable or unreliable near structures and in harbors.
+    </p>
+    
+    <h3>Obstacle Detection & Avoidance</h3>
+    <p>
+      Developed a multi-layered obstacle detection system utilizing:
+    </p>
+    <ul>
+      <li>LIDAR point cloud processing for detecting static and dynamic obstacles</li>
+      <li>Vision-based detection using computer vision algorithms for waterborne objects</li>
+      <li>Integrated costmap generation for Nav2 path planning</li>
+      <li>Dynamic Window Approach (DWA) for reactive obstacle avoidance</li>
+    </ul>
+    
+    <h3>ROS 2 Architecture</h3>
+    <p>
+      Built a modular ROS 2 system with the following key nodes:
+    </p>
+    <ul>
+      <li><strong>Perception Node:</strong> Processes sensor data and publishes obstacle information</li>
+      <li><strong>Localization Node:</strong> Maintains vehicle state estimate using sensor fusion</li>
+      <li><strong>Planning Node:</strong> Generates optimal paths using Nav2 stack</li>
+      <li><strong>Control Node:</strong> Interfaces with ArduPilot for low-level motor control</li>
+      <li><strong>Mission Manager:</strong> Coordinates high-level mission execution</li>
+    </ul>
+    
+    <h3>Simulation & Testing</h3>
+    <p>
+      Prior to field deployment, extensive testing was conducted using ArduPilot Software-In-The-Loop (SITL) simulation integrated with Gazebo. This allowed validation of:
+    </p>
+    <ul>
+      <li>Navigation algorithms in various scenarios</li>
+      <li>Obstacle avoidance behaviors</li>
+      <li>Mission planning logic</li>
+      <li>Failure mode responses</li>
+    </ul>
+    
+    <h2>Results & Impact</h2>
+    <p>
+      The autonomous USV successfully demonstrated:
+    </p>
+    <ul>
+      <li>Autonomous waypoint navigation in open water</li>
+      <li>GPS-denied navigation near dock structures with <2m positioning error</li>
+      <li>Dynamic obstacle avoidance with safe minimum distance maintenance</li>
+      <li>Reliable mission execution in sea state 2-3 conditions</li>
+    </ul>
+    
+    <h2>Challenges & Solutions</h2>
+    
+    <h3>Challenge: Sensor Reliability in Marine Environment</h3>
+    <p>
+      <strong>Solution:</strong> Implemented sensor health monitoring and automatic fallback to degraded modes when sensors fail. Added water spray filtering for LIDAR data.
+    </p>
+    
+    <h3>Challenge: Real-time Performance on Embedded Hardware</h3>
+    <p>
+      <strong>Solution:</strong> Optimized ROS 2 node processing pipelines and implemented efficient point cloud downsampling. Utilized ROS 2's DDS for low-latency inter-node communication.
+    </p>
+    
+    <h2>Future Development</h2>
+    <p>
+      Planned enhancements include:
+    </p>
+    <ul>
+      <li>Multi-USV coordination and collaborative navigation</li>
+      <li>Integration of deep learning for improved obstacle classification</li>
+      <li>Autonomous docking capabilities</li>
+      <li>Long-duration autonomous missions (8+ hours)</li>
+    </ul>
+    
+    <h2>Skills Demonstrated</h2>
+    <ul>
+      <li>ROS 2 system architecture and development</li>
+      <li>Sensor fusion and state estimation</li>
+      <li>Path planning and navigation algorithms</li>
+      <li>ArduPilot autopilot integration</li>
+      <li>Python and C++ development</li>
+      <li>Marine systems engineering</li>
+      <li>System integration and testing</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>
