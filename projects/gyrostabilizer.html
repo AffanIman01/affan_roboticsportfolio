@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Active Gyrostabilizer for Marine Vessels | Affan Iman Azman</title>
+<meta name="description" content="Active gyroscopic stabilization system designed to reduce roll motion in small marine platforms using PID control and IMU feedback.">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root {--color-bg:#0a0d12;--color-surface:#0f1318;--color-surface-2:#141920;--color-text:#e8edf5;--color-text-muted:#7a8fa8;--color-primary:#00c8d4;--color-primary-hover:#00e0ed;--color-border:rgba(100,180,220,0.10);--font-display:'Cabinet Grotesk',sans-serif;--font-body:'Satoshi',sans-serif;--font-mono:'Space Mono',monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);line-height:1.65;padding:2rem;}
+.container{max-width:1000px;margin:0 auto;}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--color-primary);text-decoration:none;margin-bottom:2rem;font-size:0.9rem;transition:opacity 0.2s;}
+.back-link:hover{opacity:0.8;}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em;}
+.meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--color-border);}
+.meta-item{font-family:var(--font-mono);font-size:0.85rem;color:var(--color-text-muted);}
+.meta-label{display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;}
+.meta-value{color:var(--color-primary);font-weight:600;}
+.tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;}
+.tag{padding:0.4rem 0.8rem;background:rgba(0,200,212,0.12);border:1px solid rgba(0,200,212,0.2);border-radius:0.25rem;font-size:0.8rem;font-family:var(--font-mono);color:var(--color-primary);}
+.content{margin-bottom:3rem;}
+.content h2{font-family:var(--font-display);font-size:1.75rem;margin-top:3rem;margin-bottom:1rem;font-weight:700;}
+.content h3{font-size:1.25rem;margin-top:2rem;margin-bottom:0.75rem;font-weight:600;}
+.content p,.content li{color:var(--color-text-muted);margin-bottom:1rem;line-height:1.7;}
+.content ul{list-style:disc;padding-left:1.5rem;margin-bottom:1.5rem;}
+.content ul li{margin-bottom:0.5rem;}
+.image-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--color-surface) 0%,var(--color-surface-2) 100%);border:1px solid var(--color-border);border-radius:0.75rem;display:flex;align-items:center;justify-content:center;margin:2rem 0;position:relative;overflow:hidden;}
+.image-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(0,200,212,0.04) 20px,rgba(0,200,212,0.04) 21px);}
+.image-placeholder svg{position:relative;color:var(--color-primary);opacity:0.5;}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html#projects" class="back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Portfolio</a>
+<h1>Active Gyrostabilizer for Marine Vessels</h1>
+<div class="meta">
+<div class="meta-item"><span class="meta-label">Project Type</span><span class="meta-value">Control Systems</span></div>
+<div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-value">2024</span></div>
+<div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Design Engineer</span></div>
+<div class="meta-item"><span class="meta-label">Organization</span><span class="meta-value">USM Engineering Lab</span></div>
+</div>
+<div class="tags">
+<span class="tag">PID Control</span>
+<span class="tag">IMU</span>
+<span class="tag">KiCad</span>
+<span class="tag">ESP32</span>
+<span class="tag">PCB Design</span>
+<span class="tag">Mechanical Design</span>
+</div>
+<div class="image-placeholder">
+<svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<circle cx="12" cy="12" r="10"/>
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+</svg>
+</div>
+<div class="content">
+<h2>Project Overview</h2>
+<p>Designed and built an active gyroscopic stabilization system to reduce roll motion in small marine platforms. The system uses a spinning flywheel controlled by precision servo motors and real-time feedback from an inertial measurement unit (IMU) to counteract vessel rolling caused by waves and sea conditions.</p>
+<h2>Objectives</h2>
+<ul>
+<li>Reduce roll motion amplitude by at least 50% in typical sea conditions</li>
+<li>Implement real-time PID control with adaptive tuning</li>
+<li>Design custom PCB for sensor integration and motor control</li>
+<li>Create robust mechanical housing for marine environment</li>
+<li>Achieve power consumption under 50W for extended operation</li>
+</ul>
+<h2>Technical Design</h2>
+<h3>Gyroscope Mechanism</h3>
+<p>The core stabilization mechanism consists of a high-speed flywheel (3000 RPM) mounted in a gimbal assembly. When the vessel rolls, the gyroscope precesses, creating torque that opposes the rolling motion. The gimbal is actively controlled via servo motors to maximize stabilization effectiveness.</p>
+<h3>Control System</h3>
+<p>Developed a PID control algorithm running on ESP32 microcontroller:</p>
+<ul>
+<li><strong>Proportional:</strong> Provides immediate response proportional to roll angle</li>
+<li><strong>Integral:</strong> Eliminates steady-state error from constant wave patterns</li>
+<li><strong>Derivative:</strong> Predicts and dampens roll rate to prevent overshoot</li>
+</ul>
+<p>The control loop operates at 100Hz, reading IMU data and adjusting gimbal position to generate counteracting torque.</p>
+<h3>Sensor Integration</h3>
+<p>Utilized MPU-6050 6-axis IMU providing:</p>
+<ul>
+<li>3-axis gyroscope for angular velocity measurement</li>
+<li>3-axis accelerometer for tilt angle estimation</li>
+<li>Complementary filter fusion for accurate roll/pitch estimation</li>
+<li>I2C interface to ESP32 for low-latency communication</li>
+</ul>
+<h3>PCB Design</h3>
+<p>Designed custom control board in KiCad featuring:</p>
+<ul>
+<li>ESP32-WROOM-32 microcontroller module</li>
+<li>Dual H-bridge motor drivers for gimbal control</li>
+<li>IMU sensor mounting with vibration isolation</li>
+<li>Power regulation (12V to 3.3V/5V rails)</li>
+<li>Emergency cutoff circuit for safety</li>
+<li>Status LED indicators and serial debug interface</li>
+</ul>
+<h2>Implementation Challenges</h2>
+<h3>Challenge: Gyroscopic Precession Prediction</h3>
+<p><strong>Solution:</strong> Implemented mathematical model of gyroscopic dynamics to predict precession torque. Used Euler's equations to calculate required gimbal angles for optimal stabilization force generation.</p>
+<h3>Challenge: Vibration Interference</h3>
+<p><strong>Solution:</strong> Added low-pass filtering to IMU readings (10Hz cutoff) and mechanically isolated sensor from motor vibrations using rubber mounts. Improved signal-to-noise ratio by 15dB.</p>
+<h3>Challenge: Power Management</h3>
+<p><strong>Solution:</strong> Optimized motor control PWM duty cycles and implemented intelligent sleep modes during calm sea states. Reduced average power consumption from 75W to 42W.</p>
+<h2>Results</h2>
+<p>Testing in controlled wave tank conditions (simulating sea state 3) demonstrated:</p>
+<ul>
+<li>62% reduction in roll amplitude compared to unstabilized vessel</li>
+<li>90ms average response time from roll detection to corrective action</li>
+<li>Stable operation over 8-hour continuous testing period</li>
+<li>Effective stabilization in roll frequencies from 0.2 to 2 Hz</li>
+</ul>
+<h2>Skills Demonstrated</h2>
+<ul>
+<li>Control systems design and implementation</li>
+<li>PID controller tuning and optimization</li>
+<li>PCB schematic capture and layout (KiCad)</li>
+<li>Embedded systems programming (ESP32, Arduino)</li>
+<li>Sensor fusion and signal processing</li>
+<li>Mechanical design for harsh environments</li>
+<li>MATLAB simulation and modeling</li>
+<li>System integration and testing</li>
+</ul>
+<h2>Future Enhancements</h2>
+<ul>
+<li>Multi-axis stabilization (roll and pitch)</li>
+<li>Adaptive control using machine learning for sea pattern recognition</li>
+<li>Wireless monitoring and remote parameter tuning</li>
+<li>Energy harvesting from gyroscope rotation</li>
+</ul>
+</div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>
